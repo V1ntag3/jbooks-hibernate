@@ -14,11 +14,10 @@ public class CadastroAutor {
 		Autor autor = new Autor();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jbooks");
 		EntityManager em = emf.createEntityManager();
-		
-		 Livro livro = em.find(Livro.class, 8);
-		 ArrayList<Livro> livrosAutor = new ArrayList<Livro>(); 
-		 livrosAutor.add(livro);
-		 autor.setLivros(livrosAutor);
+
+		Livro livro = em.find(Livro.class, 8);
+		ArrayList<Livro> livrosAutor = new ArrayList<Livro>();
+		livrosAutor.add(livro);
 		autor.setNome("Marcos Vinicius");
 		em.getTransaction().begin();
 		em.persist(autor);
